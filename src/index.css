@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.question-info > div > span:first-child {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.question-info > div > span:nth-child(2) {
+  color: #969696;
+  font-size: 16px;
+}
+.question-info > div > div {
+  color: #969696;
+  font-size: 15px;
+}
+.question-info > div > p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.question-icons {
+  display: flex;
+  align-items: center;
+}
+.question-icons > span {
+  color: #969696;
+  margin: 0 15px 0 5px;
+  font-size: 18px !important;
+}
+.question-icon {
+  font-size: 27px;
+  color: #697784;
+}
+.question-icon:hover {
+  color: #00b5d6;
+  cursor: pointer;
+}
+.avatar {
+  height: 50px;
+  border-radius: 25px;
+  margin: 10px;
+}

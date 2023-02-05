@@ -1,29 +1,47 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux';
-import './Dashboard.css'
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import "./Dashboard.css";
+import PollQuestion from "../Questions/PollQuestion";
 
-const Dashboard = () => {
-
-  const [questionType, setQuestionType] = useState("Unanswered Questions");
+const Dashboard = (props) => {
+  const [questionType, setQuestionType] = useState("unanswered");
 
   const handleQuestionTypes = () => {
-    let type = questionType === 'Unanswered Questions' ? 'Answered Questions' : 'Unanswered Questions'
-    setQuestionType(type)
-  }
+    let type = questionType === "unanswered" ? "answered" : "unanswered";
+    setQuestionType(type);
+  };
 
   return (
     <div>
       <div className="question-types">
-        <span className="question-type-text">{questionType}</span>
-        <button className="question-type-btn" onClick={handleQuestionTypes}>{questionType === 'Unanswered Questions' ? 'Answered Questions' : 'Unanswered Questions'}</button>
+        <span className="question-type-text">
+          {questionType === "unanswered"
+            ? "Unanswered Questions"
+            : "Answered Questions"}
+        </span>
+        <button className="question-type-btn" onClick={handleQuestionTypes}>
+          {questionType === "unanswered"
+            ? "Show Answered Questions"
+            : "Show Unanswered Questions"}
+        </button>
+      </div>
+      <div>
+      {
+        props.questionsIds.map((id) => (
+          <PollQuestion key={id} questionId={id} currentQuestionType={questionType} />
+        ))
+      }
       </div>
     </div>
-  )
-}
+  );
+};
 
-const mapStateToProps = ({ users, questions }) => ({
-  users,
-  questions
+const mapStateToProps = ({ questions }) => ({
+  questionsIds: !questions
+    ? []
+    : Object.keys(questions).sort(
+        (a, b) => questions[b].timestamp - questions[b].timestamp
+      ),
 });
 
-export default connect()(Dashboard)
+export default connect(mapStateToProps)(Dashboard);

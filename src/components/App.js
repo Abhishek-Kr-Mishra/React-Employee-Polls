@@ -9,6 +9,8 @@ import { handleInitialData } from "../actions/shared";
 import Dashboard from "./Dashboard/Dashboard";
 import Nav from "./Navbar/Navbar";
 import { setAuthedUser } from "../actions/authedUser";
+import NewPoll from "./NewPoll/Newpoll";
+import Leaderboard from "./Leaderboard/Leaderboard";
 
 const App = (props) => {
   useEffect(() => {
@@ -24,13 +26,15 @@ const App = (props) => {
       <LoadingBar />
       <div className="app-container">
       {
-        props.authedUser ? <Nav currentUser={props.authedUser} logOut={logOut}/> : null
+        props.authedUser ? <Nav currentUser={props.loggedInUser.name} logOut={logOut}/> : null
       }
         {props.loading === true ? null : (
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route element={<PrivateRoute user={props.authedUser} />}>
               <Route path="/" exact element={<Dashboard />} />
+              <Route path="/add" element={<NewPoll />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
             </Route>
           </Routes>
         )}

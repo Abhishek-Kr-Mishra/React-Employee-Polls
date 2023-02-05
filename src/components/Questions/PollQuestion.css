@@ -1,0 +1,31 @@
+.question{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    transition: 0.3s;
+    width: 40%;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.question-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.user-name{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.poll-btn{
+    font-size: 16px;
+    cursor: pointer;
+    height: fit-content;
+    display: inline-block;
+    align-self: end;
+    padding: 10px 25px;
+}
