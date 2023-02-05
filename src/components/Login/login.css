@@ -1,0 +1,32 @@
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container{
+    width: 50em;
+    height: 40em;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-image{
+    width: inherit;
+    margin-bottom: 20px;
+}
+
+.user-dropdown{
+    width: 20%;
+    height: 6%;
+    margin: 0 auto;
+}
+
+.login-button{
+    width: 10%;
+    margin: auto;
+    height: 5%;
+}
