@@ -40,7 +40,7 @@ const mapStateToProps = ({ questions }) => ({
   questionsIds: !questions
     ? []
     : Object.keys(questions).sort(
-        (a, b) => questions[b].timestamp - questions[b].timestamp
+        (a, b) => questions[b].timestamp - questions[a].timestamp
       ),
 });
 

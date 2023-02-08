@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
-import { createStore } from "redux";
+import { legacy_createStore as createStore } from "redux";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import reducers from "./reducers";

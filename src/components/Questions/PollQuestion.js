@@ -1,13 +1,22 @@
 import { connect } from "react-redux";
 import { formatQuestion, formatDate } from "../../utils/helpers";
 import "./PollQuestion.css";
+import { useNavigate } from "react-router-dom";
 
 const Question = (props) => {
 
-    
+    const navigate = useNavigate();
     const { name, avatar, timestamp, optionOne, optionTwo, hasReplied } =
     props.question;
     console.log("question-details ", props.question)
+
+    const navigateToQuestionPage = (e) =>{
+      if(hasReplied){
+        navigate(`question/${props.questionId}/result`)
+      }else{
+        navigate(`question/${props.questionId}`)
+      }
+    }
 
   return (
     <div className="question-details">
@@ -27,7 +36,7 @@ const Question = (props) => {
             <strong>OR</strong>
             <p>{optionOne && optionTwo.text}</p>
           </div>
-          <button className="poll-btn">Poll</button>
+          <button className="poll-btn" onClick={(e)=>navigateToQuestionPage(e)}>Poll</button>
         </div>
       }
     </div>

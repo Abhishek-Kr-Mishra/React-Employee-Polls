@@ -11,6 +11,8 @@ import Nav from "./Navbar/Navbar";
 import { setAuthedUser } from "../actions/authedUser";
 import NewPoll from "./NewPoll/Newpoll";
 import Leaderboard from "./Leaderboard/Leaderboard";
+import PollResult from "./PollResult/PollResult";
+import PollForm from "./PollForm/PollForm";
 
 const App = (props) => {
   useEffect(() => {
@@ -32,9 +34,11 @@ const App = (props) => {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route element={<PrivateRoute user={props.authedUser} />}>
-              <Route path="/" exact element={<Dashboard />} />
-              <Route path="/add" element={<NewPoll />} />
-              <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route exact path="/" element={<Dashboard />} />
+              <Route exact path="/add" element={<NewPoll />} />
+              <Route exact path="/leaderboard" element={<Leaderboard />} />
+              <Route exact path="/question/:id" element={<PollForm />}/>
+              <Route exact path="/question/:id/result" element={<PollResult />}/>
             </Route>
           </Routes>
         )}
