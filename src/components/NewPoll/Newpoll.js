@@ -11,10 +11,14 @@ const NewPoll = (props) => {
     const [secondOption, setSecondOption] = useState('')
 
     const handleOptionChange = (e) => {
+
+        let option = e.target.value;
+        option = option.trimStart()
+
         if(e.target.name === "firstOption"){
-            setFirstOption(e.target.value);
+            setFirstOption(option);
         } else{
-            setSecondOption(e.target.value);
+            setSecondOption(option);
         }
     }
 

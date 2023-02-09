@@ -1,6 +1,6 @@
 import { hideLoading, showLoading } from "react-redux-loading-bar";
 import { _saveQuestion, _saveQuestionAnswer } from "../utils/_Data";
-import { addQuestionToUser } from "./users";
+import { addAnswerToUser, addQuestionToUser } from "./users";
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const ADD_QUESTIONS = "ADD_QUESTOINS"
@@ -57,6 +57,7 @@ export function handleAddPollAnswer(answer){
     _saveQuestionAnswer(payload).then((answer) => {
       console.log("answer ", answer)
       dispatch(addAnswers(payload))
+      dispatch(addAnswerToUser(payload))
     })
 
   }

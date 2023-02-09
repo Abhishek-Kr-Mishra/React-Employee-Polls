@@ -11,8 +11,8 @@ const EmployeeDetail = ({employeeDetail}) => {
                 />
                 <div className="employee-info">
                     <div className="user-name">{employeeDetail.name} </div>
-                    <strong className='question-count'>Number of questions the employee asked: <p>{employeeDetail.totalQuestions}</p></strong>
-                    <strong className='answer-count'>Number of  questions the employee answered: <p>{employeeDetail.totalAnswers}</p></strong>
+                    <strong className='question-count'>Number of questions the employee asked: <p>{employeeDetail.createdQuestions}</p></strong>
+                    <strong className='answer-count'>Number of  questions the employee answered: <p>{employeeDetail.answeredQuestions}</p></strong>
                 </div>
             </div>
         </div>
