@@ -35,10 +35,10 @@ export function handleSubmitNewPoll(newQuestion){
       ...newQuestion,
       author: authedUser
     }).then((question) => {
-      console.log("res", question)
       dispatch(addQuestions(question))
       dispatch(addQuestionToUser(question))
-    }).then(()=>{
+    })
+    .then(()=>{
       dispatch(hideLoading());
     })
   }
@@ -55,10 +55,11 @@ export function handleAddPollAnswer(answer){
 
     dispatch(showLoading())
     _saveQuestionAnswer(payload).then((answer) => {
-      console.log("answer ", answer)
       dispatch(addAnswers(payload))
       dispatch(addAnswerToUser(payload))
     })
-
+    .then(()=>{
+      dispatch(hideLoading());
+    })
   }
 }

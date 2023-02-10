@@ -27,10 +27,7 @@ const PollResult = (props) => {
         myVote: props.users[props.authedUser].answers[id]
     }
 
-    console.log("pollDataResult ", pollResultData)
-
     const queryParameters = new URLSearchParams(window.location.search)
-    console.log("this.props.match.params ", queryParameters.get("id"))
     return(
         <div className="poll-result-page">
             <div className="poll-result">

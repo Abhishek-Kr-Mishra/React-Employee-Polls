@@ -8,7 +8,6 @@ const Question = (props) => {
     const navigate = useNavigate();
     const { name, avatar, timestamp, optionOne, optionTwo, hasReplied } =
     props.question;
-    console.log("question-details ", props.question)
 
     const navigateToQuestionPage = (e) =>{
       if(hasReplied){

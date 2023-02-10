@@ -50,10 +50,10 @@ const PollForm = (props) => {
             <strong className="user-name">{pollQuestionData.authorName} Asks, Would You Rather!!! </strong>
             <div className="poll-options" >
                 <div style={{padding: "10px 0"}}>
-                <input type="radio" name="optionOne" value="optionOne" className="option" onChange={handleChangeOption}/><label>{pollQuestionData.optionOne}</label>
+                <input data-testid="ques-radio-btn" type="radio" name="optionOne" value="optionOne" className="option" onChange={handleChangeOption}/><label>{pollQuestionData.optionOne}</label>
                 </div>
                 <div style={{padding: "10px 0"}}>
-                <input type="radio" name="optionOne" value="optionTwo" className="option" onChange={handleChangeOption}/><label>{pollQuestionData.optionTwo}</label>
+                <input data-testid="ques-radio-btn" type="radio" name="optionOne" value="optionTwo" className="option" onChange={handleChangeOption}/><label>{pollQuestionData.optionTwo}</label>
                 </div>
             </div>
             <button type="submit" disabled={choosedOption===""} onClick={(e)=> handleSubmitNewPoll(e)}>Submit Poll</button>

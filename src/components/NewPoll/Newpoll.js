@@ -36,7 +36,7 @@ const NewPoll = (props) => {
                 <form className="new-poll-form" onSubmit={handleNewFormSubmit}>
                     <input type="text" placeholder="Enter First Option" name="firstOption" onChange={(e)=> handleOptionChange(e)}/>
                     <input type="text" placeholder="Enter Second Option" name="secondOption" onChange={(e) => handleOptionChange(e)}/>
-                    <button type="submit" disabled={firstOption==="" || secondOption===""} className="new-poll-btn" >Submit</button>
+                    <button data-testid="submitButton" type="submit" disabled={firstOption==="" || secondOption===""} className="new-poll-btn" >Submit</button>
                 </form>
             </div>
         </div>

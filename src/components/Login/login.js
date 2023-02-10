@@ -35,8 +35,6 @@ const Login = (props) => {
             }
         }
     }
-
-    console.log(props.userNames)
     return(
         <div className="main-container">
             <div className="login-container">
