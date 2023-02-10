@@ -1,4 +1,8 @@
-import { ADD_ANSWERS, ADD_QUESTIONS, RECEIVE_QUESTIONS} from "../actions/questionPolls";
+import {
+  ADD_ANSWERS,
+  ADD_QUESTIONS,
+  RECEIVE_QUESTIONS,
+} from "../actions/questionPolls";
 
 export default function questions(state = {}, action) {
   switch (action.type) {
@@ -8,20 +12,23 @@ export default function questions(state = {}, action) {
         ...action.questions,
       };
     case ADD_QUESTIONS:
-      return{
+      return {
         ...state,
-        [action.question.id]: {...action.question}
+        [action.question.id]: { ...action.question },
       };
     case ADD_ANSWERS:
-      return{
+      return {
         ...state,
-        [action.answer.qid]:{
+        [action.answer.qid]: {
           ...state[action.answer.qid],
           [action.answer.answer]: {
             ...state[action.answer.qid][action.answer.answer],
-            votes: [...state[action.answer.qid][action.answer.answer].votes, action.answer.authedUser]
-          }
-        }
+            votes: [
+              ...state[action.answer.qid][action.answer.answer].votes,
+              action.answer.authedUser,
+            ],
+          },
+        },
       };
     default:
       return state;

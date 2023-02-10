@@ -26,11 +26,13 @@ const Dashboard = (props) => {
         </button>
       </div>
       <div>
-      {
-        props.questionsIds.map((id) => (
-          <PollQuestion key={id} questionId={id} currentQuestionType={questionType} />
-        ))
-      }
+        {props.questionsIds.map((id) => (
+          <PollQuestion
+            key={id}
+            questionId={id}
+            currentQuestionType={questionType}
+          />
+        ))}
       </div>
     </div>
   );

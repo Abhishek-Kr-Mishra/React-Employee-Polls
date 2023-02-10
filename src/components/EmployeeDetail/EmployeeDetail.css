@@ -1,36 +1,36 @@
-.employee-details-page{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+.employee-details-page {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
-.employees-details{
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    transition: 0.3s;
-    width: 40%;
-    padding: 10px;
-    display: flex;
-    gap: 15px;
+.employees-details {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  transition: 0.3s;
+  width: 40%;
+  padding: 10px;
+  display: flex;
+  gap: 15px;
 }
 
-.question-count{
-    display: block;
+.question-count {
+  display: block;
 }
 
-.answer-count{
-    display: block;
+.answer-count {
+  display: block;
 }
 
-.question-count p{
-    display: inline-block;
-    font-weight: normal;
-    font-size: 15px;
-    margin-left: 10px;
+.question-count p {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 15px;
+  margin-left: 10px;
 }
 
-.answer-count p{
-    display: inline-block;
-    font-weight: normal;
-    font-size: 15px;
-    margin-left: 10px;
+.answer-count p {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 15px;
+  margin-left: 10px;
 }

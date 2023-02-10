@@ -23,7 +23,7 @@ const PollForm = (props) => {
     const handleSubmitNewPoll= (e) => {
         e.preventDefault();
         props.dispatch(handleAddPollAnswer({ choosedOption, id }));
-        navigate(`/question/${id}/result`)
+        navigate(`/questions/${id}/result`)
     }
 
     const handleChangeOption= (e) =>{

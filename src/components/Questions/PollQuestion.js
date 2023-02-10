@@ -11,9 +11,9 @@ const Question = (props) => {
 
     const navigateToQuestionPage = (e) =>{
       if(hasReplied){
-        navigate(`question/${props.questionId}/result`)
+        navigate(`questions/${props.questionId}/result`)
       }else{
-        navigate(`question/${props.questionId}`)
+        navigate(`questions/${props.questionId}`)
       }
     }
 

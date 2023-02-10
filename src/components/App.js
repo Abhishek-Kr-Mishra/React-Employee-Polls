@@ -38,8 +38,8 @@ const App = (props) => {
               <Route exact path="/" element={<Dashboard />} />
               <Route exact path="/add" element={<NewPoll />} />
               <Route exact path="/leaderboard" element={<Leaderboard />} />
-              <Route exact path="/question/:id" element={<PollForm />}/>
-              <Route exact path="/question/:id/result" element={<PollResult />}/>
+              <Route exact path="/questions/:id" element={<PollForm />}/>
+              <Route exact path="/questions/:id/result" element={<PollResult />}/>
             </Route>
             <Route path="*" element={<PageNotFound />}/>
           </Routes>
