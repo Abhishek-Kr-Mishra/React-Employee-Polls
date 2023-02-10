@@ -39,12 +39,14 @@ const NewPoll = (props) => {
         <form className="new-poll-form" onSubmit={handleNewFormSubmit}>
           <input
             type="text"
+            data-testid='input-one'
             placeholder="Enter First Option"
             name="firstOption"
             onChange={(e) => handleOptionChange(e)}
           />
           <input
             type="text"
+            data-testid='input-two'
             placeholder="Enter Second Option"
             name="secondOption"
             onChange={(e) => handleOptionChange(e)}

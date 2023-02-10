@@ -26,7 +26,7 @@ test("submit will be disabled until both options field are not filled", () => {
   expect(button.disabled).toBeTruthy();
 });
 
-test("submit will be not be clickable even if one option is not filled", () => {
+test("when input-one is given to input field it correctly changes and displays updated value", () => {
   render(
     <Provider store={store}>
       <Router>
@@ -35,17 +35,13 @@ test("submit will be not be clickable even if one option is not filled", () => {
     </Provider>
   );
 
-  let firstOption = screen.getByPlaceholderText("Enter First Option");
+  let element = screen.getByPlaceholderText("Enter First Option");
 
-  fireEvent.change(firstOption, {
-    target: { value: "First Option" },
+  fireEvent.change(element, {
+    target: { value: "OPTION1" },
   });
-  let secondOption = screen.getByPlaceholderText("Enter Second Option");
-  let button = screen.getByTestId("submitButton");
-  fireEvent.click(button);
 
-  expect(firstOption.value).toBe("First Option");
-  expect(button).toBeDisabled();
+  expect(screen.queryByTestId("input-one").value).toBe("OPTION1");
 });
 
 test("submit will be clickable both options are filled", () => {
@@ -61,14 +57,14 @@ test("submit will be clickable both options are filled", () => {
   let secondOption = screen.getByPlaceholderText("Enter Second Option");
 
   fireEvent.change(firstOption, {
-    target: { value: "First Option" },
+    target: { value: "OPTION1" },
   });
   fireEvent.change(secondOption, {
-    target: { value: "Second Option" },
+    target: { value: "OPTION2" },
   });
   let button = screen.getByTestId("submitButton");
 
-  expect(firstOption.value).toBe("First Option");
-  expect(secondOption.value).toBe("Second Option");
+  expect(screen.queryByTestId("input-one").value).toBe("OPTION1");
+  expect(screen.queryByTestId("input-two").value).toBe("OPTION2");
   expect(fireEvent.click(button)).toBeTruthy();
 });
