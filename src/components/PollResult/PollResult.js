@@ -27,7 +27,6 @@ const PollResult = (props) => {
         myVote: props.users[props.authedUser].answers[id]
     }
 
-    const queryParameters = new URLSearchParams(window.location.search)
     return(
         <div className="poll-result-page">
             <div className="poll-result">
