@@ -44,7 +44,7 @@ test("when input-one is given to input field it correctly changes and displays u
   expect(screen.queryByTestId("input-one").value).toBe("OPTION1");
 });
 
-test("submit will be clickable both options are filled", () => {
+test("when input-two is given to input field it correctly changes and displays updated value", () => {
   render(
     <Provider store={store}>
       <Router>
@@ -53,18 +53,12 @@ test("submit will be clickable both options are filled", () => {
     </Provider>
   );
 
-  let firstOption = screen.getByPlaceholderText("Enter First Option");
-  let secondOption = screen.getByPlaceholderText("Enter Second Option");
+  let element = screen.getByPlaceholderText("Enter Second Option");
 
-  fireEvent.change(firstOption, {
-    target: { value: "OPTION1" },
-  });
-  fireEvent.change(secondOption, {
+  fireEvent.change(element, {
     target: { value: "OPTION2" },
   });
-  let button = screen.getByTestId("submitButton");
 
-  expect(screen.queryByTestId("input-one").value).toBe("OPTION1");
   expect(screen.queryByTestId("input-two").value).toBe("OPTION2");
-  expect(fireEvent.click(button)).toBeTruthy();
 });
+
